@@ -35,6 +35,9 @@ use the installation paths above for the current client.
 Audio files are installed separately from the GUI and scripts. Follow
 [the voice-pack instructions](docs/voice-packs.md) for Ariens' basic sounds and
 Windguaerd's Line of Fire v4.0. The ZIP contains no audio binaries.
+In **F10 → Audio**, enable **Voices On/Off**, raise **Voices volume**, and allow
+the relevant channel under **Hear voices from** (including **Vicinity** for the
+guide's test). Captions alone do not confirm audible playback.
 
 ## Verification and known limitations
 

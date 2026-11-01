@@ -65,15 +65,35 @@ the original audio files do not have a `male_` prefix.
 
 ## Use and verification
 
-Enable sound and Voices under **F10 → Audio** and check the allowed voice channels.
+Before testing, open **F10 → Audio**:
+
+1. Enable **Sound On/Off** and set **Master Volume** above zero.
+2. Enable **Voices On/Off** and set **Voices volume** above zero.
+3. Under **Hear voices from**, enable **Vicinity** for the test below. Enable
+   **Team channel**, **Guild channel**, or **Known friends** as needed for the
+   channels you use.
+
+Captions can appear even when voice playback is disabled or its channel is not
+allowed. During testing, the user heard both sample clips after enabling the
+voice settings. If captions appear without sound, check these settings first,
+then check AO's volume in the Windows Volume Mixer.
+
 Open the AOU menu and select **Ariens VoicePack** or **WGs VoicePack**.
 
-Example commands (these can broadcast audio and captions to other players):
+To test manually, press **Enter**, type one command, and press **Enter** again.
+Run each line separately and wait a few seconds between clips. These commands
+select Vicinity and can broadcast audio and captions to nearby players:
 
 ```text
+/ch Vicinity
 /voice AOU_mod\Basic\walkie
 /voice AOU_mod\LineOfFire\access_granted
 ```
+
+Expect the captions **Walkie-talkie** and **Access granted**, with their recorded
+sounds. Return to your usual chat channel afterward. `/say Hello!` sends text to
+nearby players; it does not speak the text aloud. Voice packs play prerecorded
+clips rather than converting typed messages to speech.
 
 The installed packs were checked for matching audio and captions for all 208
 distinct menu commands. One sample from each pack played through Windows audio.
