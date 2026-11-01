@@ -78,8 +78,8 @@ Example commands (these can broadcast audio and captions to other players):
 The installed packs were checked for matching audio and captions for all 208
 distinct menu commands. One sample from each pack played through Windows audio.
 In-game `/voice` tests for `Basic\walkie` and `LineOfFire\access_granted`
-displayed both expected captions with no missing-file errors. Audible output
-and other-player reception have not yet been confirmed.
+displayed both expected captions with no missing-file errors. The user confirmed
+hearing both clips in AO. Other-player reception has not been confirmed.
 Other players need the same custom sound files to hear custom clips.
 
 This guide covers the two VoicePack menus. The separate AriensGUI promotional
