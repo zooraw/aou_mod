@@ -91,8 +91,10 @@ Checked on the AO 18.8.62_EP2 new-engine client:
   repair the reward service or change its address.
 - Distorted character shadows remain unresolved. The shadow investigation is
   paused; this fork does not modify rendering shaders or client binaries.
-- The separate AriensGUI promotional sound (`/voice AriensGUI`) remains missing
-  and is not included in the two optional voice packs.
+
+**AriensGUI** is the clickable tools and shortcuts window opened from the AOU
+menu or with `/APanel`. It is separate from the **Ariens VoicePack** and
+**WGs VoicePack** menus; it is not a missing sound pack.
 
 This is not an exhaustive gameplay test. Bot responses, purchases, reward claims,
 and playback on other players' clients have not been verified.

@@ -102,8 +102,10 @@ displayed both expected captions with no missing-file errors. The user confirmed
 hearing both clips in AO. Other-player reception has not been confirmed.
 Other players need the same custom sound files to hear custom clips.
 
-This guide covers the two VoicePack menus. The separate AriensGUI promotional
-sound link (`/voice AriensGUI`) is not included in these packs.
+This guide covers the **Ariens VoicePack** and **WGs VoicePack** menus.
+The separate **AriensGUI** menu opens a tools and shortcuts window using
+`/showfile scripts\AOU_mod\AriensGUI\ArienskyPanelAOU.htm`; `/APanel` opens the
+same window. It does not require a voice pack.
 
 References: [AO-Universe voice commands](https://www.ao-universe.com/guides/notum-wars/gameplay-guides-4/voice-commands)
 and [Ariensky's sound-effects guide](https://www.ao-universe.com/guides/classic-ao/gameplay-guides-6/how-to-play-soundeffects).
