@@ -49,7 +49,9 @@ Checked on the AO 18.8.62_EP2 new-engine client:
   All controls on 13 pages match stock, including option bindings and radio values;
   Control Center retains AOU's custom layout, and Behaviour retains three extra
   options. Fixed-key definitions also match stock. In game, the AOU Menu visibility
-  checkbox hid and restored its button. This comparison does not establish that
+  checkbox hid and restored its button. After restart, Mouse cursor context hints
+  displayed Detailed, Simple, and None; Detailed → Simple → Detailed responded,
+  with the original Detailed selection restored. This comparison does not establish that
   every setting's gameplay effect has been individually tested.
 - Video Settings uses the controls and bindings from this client's stock panel.
   The old texture-resolution, color-depth, compression, and ground-texture controls
