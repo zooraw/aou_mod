@@ -53,8 +53,11 @@
     <ScrollViewChild name="video_s_scroll">
       <View h_alignment="LEFT" view_layout="vertical" max_size="Point(16000,-1)" layout_borders="Rect(0,0,10,0)">
         <TextView value="Rendering" layout_borders="Rect(0,0,0,3)" />
-        <OptionCheckBox label="#OffscreSurfaceTechnol" layout_borders="Rect(10,0,0,0)" opt_category="Char" opt_type="int" opt_variable="UseOffscreenSurfaceTechnology"/>
-        <OptionCheckBox label="#WaitForVertica" layout_borders="Rect(10,0,0,0)" opt_category="Char" opt_type="int" opt_variable="WaitForVertSync"/>
+        <OptionSlider label="Brightness" layout_borders="Rect(20,0,0,0)" opt_category="Main" opt_type="variant" opt_variable="DisplayBrightness" value_fmt="&lt;font color=#70C4D0&gt;%.0f&lt;/font&gt;" value_scale="100"/>
+        <OptionSlider label="Contrast" layout_borders="Rect(20,0,0,0)" opt_category="Main" opt_type="variant" opt_variable="DisplayContrast" value_fmt="&lt;font color=#70C4D0&gt;%.0f&lt;/font&gt;" value_scale="100"/>
+        <OptionSlider label="Gamma" layout_borders="Rect(20,0,0,0)" opt_category="Main" opt_type="variant" opt_variable="DisplayGamma" value_fmt="&lt;font color=#70C4D0&gt;%.0f&lt;/font&gt;" value_scale="100"/>
+
+        <VLayoutSpacer max_size="5" min_size="5"/>
 
         <TextView value="Ground" layout_borders="Rect(10,10,0,3)" />
         <OptionSlider label="#GroundQuality" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="variant" opt_variable="DisplayGroundQuality" value_fmt="&lt;font color=#70C4D0&gt;%.0f&lt;/font&gt;" value_scale="1"/>
@@ -69,256 +72,30 @@
         <VLayoutSpacer max_size="5" min_size="5"/>
 
         <TextView value="Textures" layout_borders="Rect(0,10,0,3)" />
-        <OptionCheckBox label="#UseCompresTexture" layout_borders="Rect(10,0,0,3)" opt_category="Main" opt_type="variant" opt_variable="DisplayCompressedTextures"/>
+        <OptionSlider label="LOD Factor" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="variant" opt_variable="DisplayTextureLOD" value_fmt="&lt;font color=#70C4D0&gt;%.1f&lt;/font&gt;" value_scale="1"/>
 
-        <OptionRadioButtonGroup label="#TextureResolut" layout_borders="Rect(10,0,0,0)" opt_category="Main" opt_type="variant" opt_variable="DisplayOtherTextureQuality">
-          <RadioButton label="#Low" value="1"/>
-          <RadioButton label="#Medium" value="2"/>
-          <RadioButton label="#Full" value="3"/>
-        </OptionRadioButtonGroup>
-
-        <OptionRadioButtonGroup label="#TextureColorDepth:" layout_borders="Rect(10,0,0,0)" opt_category="Main" opt_type="variant" opt_variable="DisplayTextureResolution">
-          <RadioButton label="#16Bit" value="0"/>
-          <RadioButton label="#16/32Bit" value="1"/>
-          <RadioButton label="#32Bit" value="2"/>
-        </OptionRadioButtonGroup>
-
-        <OptionRadioButtonGroup label="#GroundTextureQuality" layout_borders="Rect(10,0,0,0)" opt_category="Main" opt_type="variant" opt_variable="GroundTextureQuality">
-          <RadioButton label="#Low" value="0"/>
+        <OptionRadioButtonGroup label="#TextureResolut" layout_borders="Rect(10,0,0,0)" opt_category="Main" opt_type="variant" opt_variable="DisplayStripMIPs">
+          <RadioButton label="#Low" value="2"/>
           <RadioButton label="#Medium" value="1"/>
-          <RadioButton label="#High" value="2"/>
+          <RadioButton label="#Full" value="0"/>
         </OptionRadioButtonGroup>
 
-        <VLayoutSpacer max_size="5" min_size="5"/>
+        <OptionRadioButtonGroup label="Filter mode" layout_borders="Rect(10,0,0,0)" opt_category="Main" opt_type="variant" opt_variable="DisplayFilterMode">
+          <RadioButton label="Bi-Linear" value="0"/>
+          <RadioButton label="Tri-Linear" value="1"/>
+          <RadioButton label="Anisotropic" value="2"/>
+        </OptionRadioButtonGroup>
 
-        <TextView value="View Distance" layout_borders="Rect(0,10,0,3)" />
-        <OptionSlider label="#ViewDistanc" layout_borders="Rect(10,0,0,0)" opt_category="Login" opt_type="float" opt_variable="ViewDistance" value_fmt="&lt;font color=#70C4D0&gt;%.0f%%&lt;/font&gt;" value_scale="100"/>
-
-        <OptionSlider label="#CharactViewDistanc" layout_borders="Rect(10,0,0,3)" opt_category="Login" opt_type="variant" opt_variable="DisplayCharViewDistance" value_fmt="&lt;font color=#70C4D0&gt;%.0f m&lt;/font&gt;" value_scale="1"/>
-        <VLayoutSpacer/>
-      </View>
-    </ScrollViewChild>
-  </ScrollView>
-
-  <ScrollView h_alignment="LEFT" label="#Video/eff" v_scrollbar_mode="auto" scroll_client="video_eff_scroll" max_size="Point(16000,-1)">
-    <ScrollViewChild name="video_eff_scroll">
-      <View h_alignment="LEFT" view_layout="vertical" max_size="Point(16000,-1)" layout_borders="Rect(0,0,10,0)">
-        <TextView value="Effects" />
-        <OptionCheckBox label="Enable effects" layout_borders="Rect(20,0,0,0)" opt_type="variant" opt_variable="ToggleAllEffects" />
-        <TextView value="Enable/Disable specific effects:" layout_borders="Rect(10,0,0,0)" />
-        <OptionCheckBox label="#LiquidAnimati" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="RealisticWater" />
-        <OptionCheckBox label="#ClientWildlif" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="Wildlife" />
-        <OptionCheckBox label="#ShowSpacesh" layout_borders="Rect(20,0,0,0)" opt_category="Char" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="IsSpaceShipsShown" />
-        <OptionCheckBox label="#RealistClouds" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="RealisticClouds" />
-        <OptionCheckBox label="#SimpleClouds" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="SimpleClouds" />
-        <OptionCheckBox label="#Ground-" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="Shadows" />
-        <OptionCheckBox label="#ShowBuffs" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="BuffsFX" />
-        <OptionCheckBox label="#ShowTracers" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="TracersFX" />
-        <OptionCheckBox label="#ShowNanoEffects" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="NanoEffectFX" />
-        <OptionCheckBox label="#ShowMuzzlef" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="MuzzleFlashFX" />
-        <OptionCheckBox label="#ShowEnvironEffects" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="EnvironmentFX" />
-        <OptionCheckBox label="#ShowOthersEffects" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="OthersFX" />
-        <OptionCheckBox label="#SmoothAnimations" layout_borders="Rect(20,0,0,0)" opt_category="Login" opt_type="int" view_enable_expression="dvalue:ToggleAllEffects" opt_variable="SmoothAnimations" />
+        <OptionSlider label="Anisotropic quality" layout_borders="Rect(20,0,0,0)" opt_category="Main" opt_type="variant" opt_variable="DisplayAnisotropicQuality" value_fmt="&lt;font color=#70C4D0&gt;%.0f&lt;/font&gt;" value_scale="1" view_enable_expression="dvalue:DisplayFilterMode==2"/>
 
         <VLayoutSpacer max_size="5" min_size="5"/>
 
-        <OptionRadioButtonGroup label="#FogMode:" layout_borders="Rect(0,10,0,0)" opt_category="Login" opt_type="int" opt_variable="FogMode">
+        <TextView value="Anti aliasing" layout_borders="Rect(0,10,0,3)" />
+
+        <OptionRadioButtonGroup label="FXAA mode" layout_borders="Rect(10,0,0,0)" opt_category="Main" opt_type="variant" opt_variable="DisplayFXAAMode">
           <RadioButton label="#Off" value="0"/>
-          <RadioButton label="#Simple" value="1"/>
-          <RadioButton label="#Normal" value="2"/>
-          <RadioButton label="#Autodet" value="3"/>
-        </OptionRadioButtonGroup>
-
-        <VLayoutSpacer/>
-      </View>
-    </ScrollViewChild>
-  </ScrollView>
-
-  <ScrollView h_alignment="LEFT" label="#Video/env" v_scrollbar_mode="auto" scroll_client="video_env_scroll" max_size="Point(16000,-1)">
-    <ScrollViewChild name="video_env_scroll">
-      <View h_alignment="LEFT" view_layout="vertical" max_size="Point(16000,-1)" layout_borders="Rect(0,0,10,0)">
-        <OptionCheckBox label="#ShowCommercBillboa" opt_category="Char" opt_type="variant" opt_variable="Advertisements" view_enable_expression="(s:AccountFlags &amp; 0x3) == 0"/>
-        <OptionCheckBox label="#ShowVideoOn" opt_category="Char" opt_type="variant" opt_variable="VideoAdds" view_enable_expression="(s:AccountFlags &amp; 0x3) == 0"/>
-
-        <VLayoutSpacer/>
-      </View>
-    </ScrollViewChild>
-  </ScrollView>
-
-  <ScrollView h_alignment="LEFT" label="#Gui/conCenter" v_scrollbar_mode="auto" scroll_client="control_center_scroll" max_size="Point(16000,-1)">
-    <ScrollViewChild name="control_center_scroll" >
-      <View h_alignment="LEFT" view_layout="vertical" max_size="Point(16000,-1)" layout_borders="Rect(0,0,10,0)">
-        <OptionCheckBox label="#EnableControlCenter" opt_type="variant" opt_variable="cc_section1"/>
-
-	<!-- AOU Mod specific -->
-        <VLayoutSpacer min_size="5" max_size="5"/>
-
-        <OptionCheckBox label="Show Menubar" view_enable_expression="dvalue:cc_section1" layout_borders="Rect(0,1,0,0)" opt_variable="cc_menu1" opt_type="variant"/>
-        <OptionCheckBox label="View Menu" view_enable_expression="dvalue:cc_section1 &amp;&amp; dvalue:cc_menu1" layout_borders="Rect(10,0,0,0)" opt_variable="cc_aou_viewmenu" opt_type="variant"/>
-        <OptionCheckBox label="Team Menu" view_enable_expression="dvalue:cc_section1 &amp;&amp; dvalue:cc_menu1" layout_borders="Rect(10,0,0,0)" opt_variable="cc_aou_teammenu" opt_type="variant"/>
-        <OptionCheckBox label="Map Menu" view_enable_expression="dvalue:cc_section1 &amp;&amp; dvalue:cc_menu1" layout_borders="Rect(10,0,0,0)" opt_variable="cc_aou_mapmenu" opt_type="variant"/>
-        <OptionCheckBox label="Options Menu" view_enable_expression="dvalue:cc_section1 &amp;&amp; dvalue:cc_menu1" layout_borders="Rect(10,0,0,01)" opt_variable="cc_aou_options" opt_type="variant"/>
-        <OptionCheckBox label="Skill Window" view_enable_expression="dvalue:cc_section1 &amp;&amp; dvalue:cc_menu1" layout_borders="Rect(10,0,0,0)" opt_variable="cc_aou_skillwindow" opt_type="variant"/>
-        <OptionCheckBox label="Perk Window" view_enable_expression="dvalue:cc_section1 &amp;&amp; dvalue:cc_menu1" layout_borders="Rect(10,0,0,0)" opt_variable="cc_aou_perkwindow" opt_type="variant"/>
-        <OptionCheckBox label="AOU Menu" view_enable_expression="dvalue:cc_section1 &amp;&amp; dvalue:cc_menu1" layout_borders="Rect(10,0,0,0)" opt_variable="cc_aou_aoumenu" opt_type="variant"/>
-        <OptionCheckBox label="Specials Menu" view_enable_expression="dvalue:cc_section1 &amp;&amp; dvalue:cc_menu1" layout_borders="Rect(10,0,0,0)" opt_variable="cc_aou_perkmenu" opt_type="variant"/>
-
-        <VLayoutSpacer min_size="5" max_size="5"/>
-
-        <OptionCheckBox label="Left Wing Dock" view_enable_expression="dvalue:cc_section1" layout_borders="Rect(0,0,0,0)" opt_variable="cc_left_wing" opt_type="variant"/>
-        <OptionCheckBox label="Right Wing Dock" view_enable_expression="dvalue:cc_section1" layout_borders="Rect(0,1,0,0)" opt_variable="cc_right_wing" opt_type="variant"/>
-	<!-- AOU Mod specific -->
-
-        <VLayoutSpacer max_size="5" min_size="5"/>
-
-        <OptionSlider label="#ControlCenterLow" opt_category="Login" opt_variable="CCFadeLow" value_fmt="&lt;font color=#70C4D0&gt;%.0f%%&lt;/font&gt;" value_scale="100"/>
-        <OptionSlider label="#ControlCenterHigh" opt_category="Login" opt_variable="CCFadeHigh" value_fmt="&lt;font color=#70C4D0&gt;%.0f%%&lt;/font&gt;" value_scale="100"/>
-        <OptionSlider label="#ControlCenterFade" opt_category="Login" opt_variable="CCFadeDelay" value_fmt="&lt;font color=#70C4D0&gt;%.1fs&lt;/font&gt;" value_scale="1"/>
-
-        <TextView value="My Character" layout_borders="Rect(0,10,0,3)" />
-        <View layout_borders="Rect(10,0,0,0)">
-          <OptionCheckBox label="#HealthBar" opt_type="variant" opt_variable="cc_health_bar" view_enable_expression="dvalue:cc_section1"/>
-          <OptionCheckBox label="#NanoBar" opt_type="variant" opt_variable="cc_nano_bar" view_enable_expression="dvalue:cc_section1"/>
-          <OptionCheckBox label="#XpBar" opt_type="variant" opt_variable="cc_xp_bar" view_enable_expression="dvalue:cc_section1"/>
-          <OptionCheckBox label="#AlienXpBar" opt_type="variant" opt_variable="cc_alienxp_bar" view_enable_expression="dvalue:cc_section1"/>
-        </View>
-
-        <VLayoutSpacer max_size="5" min_size="5"/>
-
-        <TextView value="Targeting" layout_borders="Rect(0,10,0,3)" />
-        <View layout_borders="Rect(10,0,0,0)">
-          <OptionCheckBox label="#NanoTargetHealth" opt_type="variant" opt_variable="cc_friendly_health_bar" view_enable_expression="dvalue:cc_section1"/>
-          <OptionCheckBox label="Show Nano Target's NCU" layout_borders="Rect(10,0,0,0)" opt_variable="ShowNanoTargetNCU" opt_type="variant" opt_category="Char" view_enable_expression="dvalue:cc_section1"/>
-
-          <OptionCheckBox label="#FightinTargetHealth" opt_type="variant" opt_variable="cc_hostile_health_bar" view_enable_expression="dvalue:cc_section1"/>
-          <OptionCheckBox label="Show Fight Target's NCU" layout_borders="Rect(10,0,0,0)" opt_variable="ShowFightTargetNCU" opt_type="variant" opt_category="Char" view_enable_expression="dvalue:cc_section1"/>
-
-          <OptionCheckBox label="Show Target's Target" opt_type="variant" opt_variable="Targetstarget"/>
-          <OptionCheckBox label="#AutoTargetPlayer" opt_type="variant" opt_variable="AutoTargetPvP"/>
-          <OptionCheckBox label="#AutoTargetMonster" opt_type="variant" opt_variable="AutoTargetMOB"/>
-        </View>
-
-        <VLayoutSpacer max_size="5" min_size="5"/>
-
-        <TextView value="Shortcut bars" layout_borders="Rect(0,10,0,3)" />
-        <View layout_borders="Rect(10,0,0,0)">
-          <OptionCheckBox label="#Hide/shShortcu" opt_type="variant" opt_variable="shortcutbar_window" view_enable_expression="dvalue:cc_section1"/>
-          <OptionCheckBox label="Lock shortcut bars" opt_variable="LockHotbars" opt_type="variant" opt_category="Char"/>
-          <OptionSlider label="Number of shortcut bars:" layout_borders="Rect(0,3,0,3)" opt_variable="NumHotbars" value_fmt="&lt;font color=#70C4D0&gt;%.0f&lt;/font&gt;" value_scale="1"/>
-          <OptionCheckBox label="#AddNewNanos" opt_type="variant" opt_variable="ShortcutNewNanos"/>
-        </View>
-
-        <VLayoutSpacer max_size="5" min_size="5"/>
-
-        <TextView value="Compass" layout_borders="Rect(0,10,0,3)" />
-        <OptionCheckBox label="Display Compass" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="cc_compass" view_enable_expression="dvalue:cc_section1"/>
-
-        <VLayoutSpacer max_size="5" min_size="5"/>
-
-        <TextView value="Rollup panel" layout_borders="Rect(0,10,0,3)" />
-        <View layout_borders="Rect(10,0,0,0)">
-          <OptionCheckBox label="#RollupPanel" opt_type="variant" opt_variable="cc_rollup_panel" view_enable_expression="dvalue:cc_section1"/>
-          <OptionCheckBox label="#MiniToolbar" opt_type="variant" opt_variable="cc_mini_toolbar" view_enable_expression="dvalue:cc_rollup_panel &amp;&amp; dvalue:cc_section1"/>
-          <VLayoutSpacer max_size="5" min_size="5"/>
-          <OptionSlider label="#SidebarTranspa" opt_category="Login" opt_variable="cc_rollup_controller_fade_level" value_fmt="&lt;font color=#70C4D0&gt;%.0f%%&lt;/font&gt;" value_scale="100"/>
-        </View>
-
-        <VLayoutSpacer max_size="5" min_size="5"/>
-
-        <TextView value="Notification Window" layout_borders="Rect(0,10,0,3)" />
-        <View layout_borders="Rect(10,0,0,0)">
-          <OptionCheckBox label="#NotificationWindow" opt_type="variant" opt_variable="notification_window"/>
-          <OptionCheckBox label="#NotificationWindowVis" opt_type="variant" opt_variable="NotificationWindowVisibility"/>
-        </View>
-
-        <VLayoutSpacer/>
-      </View>
-    </ScrollViewChild>
-  </ScrollView>
-
-  <ScrollView h_alignment="LEFT" label="#Gui/win" v_scrollbar_mode="auto" scroll_client="gui_win_scroll" max_size="Point(16000,-1)">
-    <ScrollViewChild name="gui_win_scroll">
-      <View h_alignment="LEFT" view_layout="vertical" max_size="Point(16000,-1)" layout_borders="Rect(0,0,10,0)">
-        <OptionCheckBox label="#AutoCloseWindows" opt_type="variant" opt_variable="AutoCloseWindows"/>
-
-        <TextView layout_borders="Rect(0,10,0,3)" value="#WindowsThatShould"/>
-        <OptionCheckBox label="#Backpac" layout_borders="Rect(10,0,0,0)"  opt_type="variant" opt_variable="esc_backpacks"/>
-        <OptionCheckBox label="#DialogBoxes" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_dialogs"/>
-        <OptionCheckBox label="#ChatConfigPanel" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_chatconfig"/>
-        <OptionCheckBox label="#CityTerminaWindow" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_cityterminal"/>
-        <OptionCheckBox label="#Invento" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_inventory"/>
-        <OptionCheckBox label="#Chests" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_chests"/>
-        <OptionCheckBox label="#Corpses" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_corpses"/>
-        <OptionCheckBox label="#MissionSelectiWindow" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_missionselection"/>
-        <OptionCheckBox label="#TradeskWindow" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_tradeskill"/>
-        <OptionCheckBox label="#ShopWindows" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_shops"/>
-        <OptionCheckBox label="#PlayerTradeWindow" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_trades"/>
-        <OptionCheckBox label="#NpcChat" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_npcchat"/>
-        <OptionCheckBox label="#OptionPanel" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_optionpanel"/>
-        <OptionCheckBox label="#PerkWindow" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_perkwindow"/>
-        <OptionCheckBox label="#TowerBuildMenu" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_towerbuildmenu"/>
-        <OptionCheckBox label="#TutoriaTips" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_tips"/>
-        <OptionCheckBox label="#InfoView" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_infoview"/>
-        <OptionCheckBox label="#WearWindow" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_wear"/>
-        <OptionCheckBox label="#ResearchView" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_research"/>
-        <OptionCheckBox label="#PlanetmWindow" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_planetmap"/>
-        <OptionCheckBox label="#VehicleSelect" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_vehicle"/>
-        <OptionCheckBox label="#NanoWindow" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_nano"/>
-        <OptionCheckBox label="#RaidWindow" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_raid"/>
-        <OptionCheckBox label="#TeamSearchWindow" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="esc_lft"/>
-
-        <TextView layout_borders="Rect(0,3,5,5)" value="NOTE: Changes to already open windows will not take effect until the next time the window is opened"/>
-        <VLayoutSpacer/>
-      </View>
-    </ScrollViewChild>
-  </ScrollView>
-
-  <ScrollView h_alignment="LEFT" label="#Gui/cha" v_scrollbar_mode="auto" scroll_client="gui_cha_scroll" max_size="Point(16000,-1)">
-    <ScrollViewChild name="gui_cha_scroll">
-      <View h_alignment="LEFT" view_layout="vertical" max_size="Point(16000,-1)" layout_borders="Rect(0,0,10,0)">
-        <TextView value="Chat Window" layout_borders="Rect(0,0,0,3)" />
-        <OptionRadioButtonGroup label="#TextShadows" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="ChatTextShadowOffset">
-          <RadioButton label="#None" value="0"/>
-          <RadioButton label="#Shallow" value="1"/>
-          <RadioButton label="#Deep" value="2"/>
-        </OptionRadioButtonGroup>
-
-        <OptionSlider label="#TextFadeDelay:" layout_borders="Rect(10,0,0,0)" opt_variable="ChatTextFadeDelay" value_fmt="&lt;font color=#70C4D0&gt;%.1fs&lt;/font&gt;" value_scale="1"/>
-        <OptionSlider label="#TextFadeTime:" layout_borders="Rect(10,0,0,0)" opt_variable="ChatTextFadeTime" value_fmt="&lt;font color=#70C4D0&gt;%.1fs&lt;/font&gt;" value_scale="1"/>
-
-        <OptionCheckBox label="#ShowSelecteGroup" layout_borders="Rect(20,0,0,0)" opt_type="variant" opt_variable="ChatShowOGrpInInputBar"/>
-        <OptionCheckBox label="#ShowSelecteGroup_1" layout_borders="Rect(20,0,0,0)" opt_type="variant" opt_variable="ChatShowOGrpInTitleBar"/>
-        <OptionCheckBox label="#WarnWhenSending" layout_borders="Rect(20,0,0,0)" opt_type="variant" opt_variable="ChatWarnWhenSpeakingToUnsubGroups"/>
-        <VLayoutSpacer/>
-      </View>
-    </ScrollViewChild>
-  </ScrollView>
-
-  <ScrollView h_alignment="LEFT" label="#Gui/equ" v_scrollbar_mode="auto" scroll_client="gui_equ_scroll" max_size="Point(16000,-1)">
-    <ScrollViewChild name="gui_equ_scroll">
-    <View h_alignment="LEFT" view_layout="vertical" max_size="Point(16000,-1)" layout_borders="Rect(0,0,10,0)">
-      <TextView value="Equipment Window" layout_borders="Rect(0,0,0,3)"/>
-      <OptionCheckBox label="#LockEquipment" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="LockEquipment"/>
-
-      <TextView value="#Helmet" layout_borders="Rect(0,10,0,3)"/>
-      <OptionCheckBox label="#Helmet_Visible" layout_borders="Rect(10,0,0,0)" opt_category="Char" opt_type="variant" opt_variable="VisualFlags" opt_bitnum="2"/>
-
-      <TextView value="#ShoulderPads" layout_borders="Rect(0,10,0,3)"/>
-      <OptionCheckBox label="#ShoulderPad_RightVisible" layout_borders="Rect(10,0,0,0)" opt_category="Char" opt_type="variant" opt_variable="VisualFlags" opt_bitnum="0"/>
-      <OptionCheckBox label="#ShoulderPad_LeftVisible" layout_borders="Rect(10,0,0,0)" opt_category="Char" opt_type="variant" opt_variable="VisualFlags" opt_bitnum="1"/>
-      <OptionCheckBox label="#ShoulderPad_DoubleLeft" layout_borders="Rect(10,0,0,0)" opt_category="Char" opt_type="variant" opt_variable="VisualFlags" opt_bitnum="3"/>
-      <OptionCheckBox label="#ShoulderPad_DoubleRight" layout_borders="Rect(10,0,0,0)" opt_category="Char" opt_type="variant" opt_variable="VisualFlags" opt_bitnum="4"/>
-
-      <TextView value="#SocialTab" layout_borders="Rect(0,10,0,3)"/>
-      <OptionCheckBox label="#SocialTab_Active" layout_borders="Rect(10,0,0,0)" tooltip="#ToolTip_SocialTab" tooltip_body="#ToolTip_SocialTab_Body" opt_category="Char" opt_type="variant" opt_variable="VisualFlags" opt_bitnum="5"/>
-      <OptionCheckBox label="#SocialTab_Overwrite" layout_borders="Rect(10,0,0,0)" tooltip="#ToolTip_SocialTab" tooltip_body="#ToolTip_SocialTab_Overwrite_Body" opt_category="Char" opt_type="variant" opt_variable="VisualFlags" opt_bitnum="6"/>
-
-      <VLayoutSpacer/>
-    </View>
-    </ScrollViewChild>
-  </ScrollView>
-
-  <ScrollView h_alignment="LEFT" label="#Gui/npc" v_scrollbar_mode="auto" scroll_client="gui_npc_scroll" max_size="Point(16000,-1)">
+          <RadioButton label="#Low" value="1"/>
+          <R…5821 tokens truncated…ent="gui_npc_scroll" max_size="Point(16000,-1)">
     <ScrollViewChild name="gui_npc_scroll">
       <View h_alignment="LEFT" view_layout="vertical" max_size="Point(16000,-1)" layout_borders="Rect(0,0,10,0)">
         <OptionCheckBox label="#ShowMyQuestio" opt_category="Login" opt_type="int" opt_variable="ShowNPCQuestions"/>

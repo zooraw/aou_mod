@@ -2,7 +2,8 @@
 
 AOU Mod for Anarchy Online, based on [dracul89/aou_mod](https://github.com/dracul89/aou_mod).
 This fork repairs eight local help links and two Line of Fire voice filenames.
-It retains upstream's Skills-window fix.
+It retains upstream's Skills-window fix and updates Video Settings for the
+18.8.62_EP2 new-engine client.
 
 **[Download this fork as a ZIP](https://github.com/zooraw/aou_mod/archive/refs/heads/main.zip)**
 
@@ -43,6 +44,11 @@ guide's test). Captions alone do not confirm audible playback.
 
 Checked on the AO 18.8.62_EP2 new-engine client:
 
+- Video Settings uses the controls and bindings from this client's stock panel.
+  The old texture-resolution, color-depth, compression, and ground-texture controls
+  are replaced with current texture, filter, FXAA, brightness, and grass settings.
+  Restart AO after updating. In-game interaction checks for this panel are pending;
+  compatibility with the old-engine client has not been verified.
 - All 11 Skills categories populate. Save with no pending changes and Close work.
   Spending or resetting skill points has not been tested.
 - All 363 literal local file links in `scripts` resolve to packaged files.
