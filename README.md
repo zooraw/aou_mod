@@ -3,7 +3,7 @@
 AOU Mod for Anarchy Online, based on [dracul89/aou_mod](https://github.com/dracul89/aou_mod).
 This fork repairs eight local help links and two Line of Fire voice filenames.
 It retains upstream's Skills-window fix and updates Video Settings for the
-18.8.62_EP2 new-engine client.
+18.8.62_EP2 new-engine client, including its mouse-cursor mode selector.
 
 **[Download this fork as a ZIP](https://github.com/zooraw/aou_mod/archive/refs/heads/main.zip)**
 
@@ -44,6 +44,13 @@ guide's test). Captions alone do not confirm audible playback.
 
 Checked on the AO 18.8.62_EP2 new-engine client:
 
+- AOU_CYT's 15 Preferences pages were compared with the installed stock panel.
+  Restored the missing Mouse Cursor Mode selector under Controls → Mouse.
+  All controls on 13 pages match stock, including option bindings and radio values;
+  Control Center retains AOU's custom layout, and Behaviour retains three extra
+  options. Fixed-key definitions also match stock. In game, the AOU Menu visibility
+  checkbox hid and restored its button. This comparison does not establish that
+  every setting's gameplay effect has been individually tested.
 - Video Settings uses the controls and bindings from this client's stock panel.
   The old texture-resolution, color-depth, compression, and ground-texture controls
   are replaced with current texture, filter, FXAA, brightness, and grass settings.

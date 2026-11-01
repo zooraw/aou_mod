@@ -423,6 +423,14 @@
 
         <VLayoutSpacer max_size="5" min_size="5"/>
 
+        <OptionRadioButtonGroup label="#MouseCursorMode" layout_borders="Rect(10,0,0,0)" opt_type="variant" opt_variable="MouseCursorMode">
+          <RadioButton label="#MouseCursorModeDetailed" value="2"/>
+          <RadioButton label="#MouseCursorModeSimple" value="1"/>
+          <RadioButton label="#MouseCursorModeNone" value="0"/>
+        </OptionRadioButtonGroup>
+
+        <VLayoutSpacer max_size="5" min_size="5"/>
+
         <OptionCheckBox label="Default action on doubleclick" layout_borders="Rect(10,0,0,0)" opt_category="Login" opt_type="variant" opt_variable="DoubleclickAction" tooltip="#ToolTip_Doubleclick" tooltip_body="#ToolTip_Doubleclick_Body"/>
         <OptionCheckBox label="Use bounding boxes for targeting" layout_borders="Rect(10,0,0,0)" opt_category="Login" opt_type="variant" opt_variable="BoundingBoxTargeting"/>
         <VLayoutSpacer/>
