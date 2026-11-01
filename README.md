@@ -7,6 +7,14 @@ client.
 
 **[Download this fork as a ZIP](https://github.com/zooraw/aou_mod/archive/refs/heads/main.zip)**
 
+## Optional armor packs
+
+Armor artwork and its optional controls are managed by the separate
+[AO Armor Packs repository](https://github.com/zooraw/ao-armor-packs).
+The base AOU package contains no armor controls. Install the separate pack to
+add them; uninstalling it removes them. See its
+[AI installation guide](https://github.com/zooraw/ao-armor-packs/blob/main/INSTALL_WITH_AI.md).
+
 ## Fixed bugs
 
 - **Empty Skills categories:** retains dracul89's upstream fix; all 11 categories
