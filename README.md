@@ -11,9 +11,13 @@ client.
 
 Armor artwork and its optional controls are managed by the separate
 [AO Armor Packs repository](https://github.com/zooraw/ao-armor-packs).
+
+- **[Download the latest armor-pack release](https://github.com/zooraw/ao-armor-packs/releases/latest)**
+- **[Installation guide](https://github.com/zooraw/ao-armor-packs/blob/main/INSTALL.md)**
+- [Install with an AI assistant](https://github.com/zooraw/ao-armor-packs/blob/main/INSTALL_WITH_AI.md)
+
 The base AOU package contains no armor controls. Install the separate pack to
-add them; uninstalling it removes them. See its
-[AI installation guide](https://github.com/zooraw/ao-armor-packs/blob/main/INSTALL_WITH_AI.md).
+add them; uninstalling it removes them.
 
 ## Fixed bugs
 
